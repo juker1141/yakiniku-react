@@ -81,13 +81,18 @@ const Home = () => {
 
       {/* Events */}
       <div className="flex justify-center relative pb-20">
-        <div className="flex flex-col items-center justify-end">
+        <div className="flex flex-col items-center justify-end z-10">
           <div className="flex ml-[400px] justify-between gap-10">
             <Card />
             <Card />
             <Card />
           </div>
         </div>
+        <img
+          src="/events/meat.png"
+          alt="meat"
+          className="absolute -bottom-24 left-24 xl:left-48 -z-0"
+        />
       </div>
     </main>
   );

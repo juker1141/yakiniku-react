@@ -1,19 +1,76 @@
+import { useState, useEffect } from "react";
+
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // 創建視窗大小變化的監聽函數
+    const handleResize = () => {
+      if (window.innerWidth <= 1280) {
+        // 修改為小於等於 1280px
+        setIsOpen(false);
+      }
+    };
+
+    // 添加事件監聽器
+    window.addEventListener("resize", handleResize);
+
+    // 組件卸載時清理事件監聽器
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <nav className="absolute flex justify-end items-center px-12 top-0 w-full z-50">
+    <nav
+      className={` fixed flex justify-end items-center xl:px-12 top-0 w-full z-50`}
+    >
       {/* Logo */}
-      <div id="logo" className="absolute top-8 left-8 z-50">
-        <h1 className="">
-          <a href="/">
-            <img src="/logo-n.svg" alt="logo" width={320} />
-          </a>
-        </h1>
+      <div className="flex justify-between items-center">
+        <div id="logo" className="fixed top-8 left-8 z-[120]">
+          <h1 className="">
+            <a href="/">
+              <img
+                src="/logo-n.svg"
+                alt="logo"
+                className={`w-24 xl:w-[320px] ${isOpen || "drop-shadow-lg"}`}
+              />
+            </a>
+          </h1>
+        </div>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          type="button"
+          className={`xl:hidden fixed top-10 right-0  ${
+            isOpen ? "z-0" : "z-[120]"
+          }`}
+        >
+          <img
+            src="/menu-btn-mobile.webp"
+            alt="menu"
+            className="w-16 drop-shadow-lg"
+          />
+        </button>
       </div>
-      <div className="">
-        <div className="flex justify-between items-center h-16 bg-primary px-20 py-10 rounded-b-[45px]">
+      <div>
+        <div
+          className={`fixed top-0 right-0 xl:static flex justify-between items-center h-screen w-screen xl:w-auto xl:h-16 bg-primary xl:px-20 xl:py-10 xl:rounded-b-[45px] transition-all xl:transition-none duration-500 ease-in-out transform ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          } xl:translate-x-0 z-[110]`}
+        >
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            className="absolute top-14 right-6 z-[120] xl:hidden"
+          >
+            <div className="w-12 h-12 flex flex-col items-center">
+              <div className="w-8 h-1 bg-third rotate-45 translate-y-1"></div>
+              <div className="w-8 h-1 bg-third -rotate-45 "></div>
+            </div>
+          </button>
           {/* Navigation Links */}
-          <div className="hidden md:flex space-x-8">
-            <ul className="flex items-center">
+          <div className="flex justify-center w-full xl:space-x-8">
+            <ul className="flex flex-col xl:flex-row justify-center items-center">
               <li>
                 <a
                   href="#"
@@ -22,7 +79,7 @@ const Navbar = () => {
                   最新消息
                 </a>
               </li>
-              <li className="border-r border-ry-blue h-5 mx-8"></li>
+              <li className="border-b xl:border-r border-ry-blue h-5 my-8 xl:mx-8 w-full xl:w-auto"></li>
               <li>
                 <a
                   href="#"
@@ -31,7 +88,7 @@ const Navbar = () => {
                   美味故事
                 </a>
               </li>
-              <li className="border-r border-ry-blue h-5 mx-8"></li>
+              <li className="border-b xl:border-r border-ry-blue h-5 my-8 xl:mx-8 w-full xl:w-auto"></li>
               <li>
                 <a
                   href="#"
@@ -40,7 +97,7 @@ const Navbar = () => {
                   門市據點
                 </a>
               </li>
-              <li className="border-r border-ry-blue h-5 mx-8"></li>
+              <li className="border-b xl:border-r border-ry-blue h-5 my-8 xl:mx-8 w-full xl:w-auto"></li>
               <li>
                 <a
                   href="#"
