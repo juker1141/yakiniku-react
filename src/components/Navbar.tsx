@@ -33,7 +33,9 @@ const Navbar = () => {
               <img
                 src="/logo-n.svg"
                 alt="logo"
-                className={`w-24 xl:w-[320px] ${isOpen || "drop-shadow-lg"}`}
+                className={`w-24 md:w-48 xl:w-[320px] ${
+                  isOpen || "drop-shadow-lg"
+                }`}
               />
             </a>
           </h1>
@@ -41,14 +43,14 @@ const Navbar = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           type="button"
-          className={`xl:hidden fixed top-10 right-0  ${
+          className={`xl:hidden fixed top-10 md:top-16 right-0  ${
             isOpen ? "z-0" : "z-[120]"
           }`}
         >
           <img
             src="/menu-btn-mobile.webp"
             alt="menu"
-            className="w-16 drop-shadow-lg"
+            className="w-16 md:w-24 drop-shadow-lg"
           />
         </button>
       </div>
@@ -61,7 +63,7 @@ const Navbar = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             type="button"
-            className="absolute top-14 right-6 z-[120] xl:hidden"
+            className="absolute top-14 md:top-24 right-6 md:right-10 z-[120] xl:hidden"
           >
             <div className="w-12 h-12 flex flex-col items-center">
               <div className="w-8 h-1 bg-third rotate-45 translate-y-1"></div>
@@ -79,7 +81,7 @@ const Navbar = () => {
                   最新消息
                 </a>
               </li>
-              <li className="border-b xl:border-r border-ry-blue h-5 my-8 xl:mx-8 w-full xl:w-auto"></li>
+              <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
                 <a
                   href="#"
@@ -88,7 +90,7 @@ const Navbar = () => {
                   美味故事
                 </a>
               </li>
-              <li className="border-b xl:border-r border-ry-blue h-5 my-8 xl:mx-8 w-full xl:w-auto"></li>
+              <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
                 <a
                   href="#"
@@ -97,7 +99,7 @@ const Navbar = () => {
                   門市據點
                 </a>
               </li>
-              <li className="border-b xl:border-r border-ry-blue h-5 my-8 xl:mx-8 w-full xl:w-auto"></li>
+              <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
                 <a
                   href="#"
