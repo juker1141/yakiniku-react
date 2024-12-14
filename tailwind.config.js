@@ -11,10 +11,16 @@ export default {
         "ry-blue": "#3b4042",
         "ry-orange": "#ff9c24",
         "ry-yellow": "#fdd23e",
+        "ry-black": "#3e3a39",
       },
       backgroundImage: {
         banner: "url('/public/banner/banner.jpg')",
         rope: "url('/public/section3-rope.webp')",
+        eventBanner: "url('/public/events/event-banner.webp')",
+        aboutService: "url('/public/about/service.jpg')",
+        aboutSauce: "url('/public/about/sauce.jpg')",
+        aboutSkill: "url('/public/about/skill.jpg')",
+        aboutQuality: "url('/public/about/quality.jpg')",
       },
       animation: {
         "spin-slow": "spin 40s linear infinite",

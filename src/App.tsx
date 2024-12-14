@@ -1,5 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Events from "./pages/Events";
+import About from "./pages/About";
+import Menu from "./pages/Menu";
+import MenuContent from "./pages/MenuContent";
+import Reservation from "./pages/Reservation";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import GotopBtn from "./components/buttons/GotopBtn";
@@ -11,6 +16,12 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/menu" element={<Menu />} />
+          <Route path="/menu/inner" element={<MenuContent />} />
+          <Route path="/menu/outer" element={<MenuContent />} />
+          <Route path="/reservation" element={<Reservation />} />
         </Routes>
         <Footer />
         <GotopBtn />

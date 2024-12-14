@@ -1,35 +1,32 @@
 import { useState, useEffect } from "react";
+import { Link, NavLink } from "react-router-dom"; // 引入 React Router 組件
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // 創建視窗大小變化的監聽函數
     const handleResize = () => {
       if (window.innerWidth <= 1280) {
-        // 修改為小於等於 1280px
         setIsOpen(false);
       }
     };
 
-    // 添加事件監聽器
     window.addEventListener("resize", handleResize);
 
-    // 組件卸載時清理事件監聽器
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   return (
-    <nav
-      className={` fixed flex justify-end items-center xl:px-12 top-0 w-full z-50`}
-    >
+    <nav className="fixed flex justify-end items-center xl:px-12 top-0 w-full z-50">
       {/* Logo */}
       <div className="flex justify-between items-center">
         <div id="logo" className="fixed top-8 left-8 z-[120]">
-          <h1 className="">
-            <a href="/">
+          <h1>
+            <Link to="/">
+              {" "}
+              {/* 改用 Link */}
               <img
                 src="/logo-n.svg"
                 alt="logo"
@@ -37,7 +34,7 @@ const Navbar = () => {
                   isOpen || "drop-shadow-lg"
                 }`}
               />
-            </a>
+            </Link>
           </h1>
         </div>
         <button
@@ -67,46 +64,46 @@ const Navbar = () => {
           >
             <div className="w-12 h-12 flex flex-col items-center">
               <div className="w-8 h-1 bg-third rotate-45 translate-y-1"></div>
-              <div className="w-8 h-1 bg-third -rotate-45 "></div>
+              <div className="w-8 h-1 bg-third -rotate-45"></div>
             </div>
           </button>
           {/* Navigation Links */}
           <div className="flex justify-center w-full xl:space-x-8">
             <ul className="flex flex-col xl:flex-row justify-center items-center">
               <li>
-                <a
-                  href="#"
+                <NavLink // 改用 NavLink
+                  to="/events"
                   className="text-third hover:text-ry-orange font-semibold"
                 >
                   最新消息
-                </a>
+                </NavLink>
               </li>
               <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
-                <a
-                  href="#"
+                <NavLink // 改用 NavLink
+                  to="/about"
                   className="text-third hover:text-ry-orange font-semibold"
                 >
                   美味故事
-                </a>
+                </NavLink>
               </li>
               <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
-                <a
-                  href="#"
+                <NavLink // 改用 NavLink
+                  to="/menu"
                   className="text-third hover:text-ry-orange font-semibold"
                 >
-                  門市據點
-                </a>
+                  美味菜單
+                </NavLink>
               </li>
               <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
-                <a
-                  href="#"
+                <NavLink // 改用 NavLink
+                  to="/reservation"
                   className="text-third hover:text-ry-orange font-semibold"
                 >
                   線上訂位
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>

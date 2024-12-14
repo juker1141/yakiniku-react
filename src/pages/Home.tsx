@@ -3,7 +3,7 @@ import Card from "../components/Card";
 
 const Home = () => {
   return (
-    <main className="mx-auto">
+    <main className="mx-auto min-h-screen">
       <div className="w-full h-screen xl:pl-52 xl:pb-12 mb-36 xl:mb-0">
         <div className="relative w-full h-full">
           <div className="bg-center bg-cover bg-no-repeat bg-banner w-full h-full rounded-bl-[180px]"></div>
@@ -80,9 +80,10 @@ const Home = () => {
       <Rope />
 
       {/* Events */}
-      <div className="flex justify-center relative pb-20">
-        <div className="flex flex-col items-center justify-end z-10">
-          <div className="flex xl:ml-[400px] justify-between gap-10">
+      <div className="relative pb-48">
+        <div className="absolute left-0 -top-12 bg-eventBanner bg-cover bg-center bg-no-repeat hidden xl:block w-[350px] h-[650px] z-20"></div>
+        <div className="flex items-start justify-center z-10">
+          <div className="flex justify-center gap-10">
             <Card />
             <Card />
             <Card />
@@ -91,7 +92,7 @@ const Home = () => {
         <img
           src="/events/meat.png"
           alt="meat"
-          className="absolute -bottom-24 left-24 xl:left-48 -z-0"
+          className="absolute -bottom-24 left-24 xl:left-72 -z-0"
         />
       </div>
     </main>
