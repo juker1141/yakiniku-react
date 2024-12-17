@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import { getAssetPath } from "../utils/path";
 
 const MenuContent = () => {
   const location = useLocation();
@@ -27,7 +28,7 @@ const MenuContent = () => {
         {images.map((image, index) => (
           <div key={index} className="w-full aspect-[4/3]">
             <img
-              src={`/public/menu${image}`}
+              src={getAssetPath(`/menu${image}`)}
               alt={`menu-${index + 1}`}
               width="100%"
               className="shadow-lg"
