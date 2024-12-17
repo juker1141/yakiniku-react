@@ -26,7 +26,8 @@ const Footer = () => {
         />
         <div className="text-black font-semibold text-sm mt-10">
           正修數位媒體應用 - 練習作業
-          <br className="block xl:hidden" /> © All right reserved.
+          <br className="block xl:hidden" />
+          Ryu © All right reserved.
         </div>
       </div>
     </div>

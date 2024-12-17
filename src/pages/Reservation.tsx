@@ -10,12 +10,16 @@ const Reservation = () => {
     notes: "",
   });
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(formData);
   };
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -23,17 +27,15 @@ const Reservation = () => {
   };
 
   return (
-    <div className="container mx-auto min-h-screen mt-48 xl:mt-[300px]">
-      <h2 className="w-full text-center text-4xl mb-8 font-bold mb-10">
-        線上訂位
-      </h2>
+    <div className="container mx-auto min-h-screen mt-48 xl:mt-[300px] p-4 xl:px-0">
+      <h2 className="w-full text-center text-4xl font-bold mb-8">線上訂位</h2>
       <div className="flex flex-col md:flex-row gap-8">
         {/* 地圖區域 */}
         <div className="w-full md:w-1/2">
           <img
             src="/public/reservation/location.png"
             alt="餐廳位置地圖"
-            className="w-full h-[600px] object-cover rounded-xl shadow-lg"
+            className="w-full h-[300px] xl:h-[600px] object-cover rounded-xl shadow-lg"
           />
         </div>
 

@@ -2,46 +2,49 @@ import { Link } from "react-router-dom";
 
 import { eventList } from "../utils/event";
 
-const EventCard = ({ image, title, date, description, link }: any) => {
+// 在组件前添加接口定义
+interface EventCardProps {
+  id: number;
+  image: string;
+  title: string;
+  date: string;
+  description: string;
+}
+
+const EventCard = ({ id, image, title, date, description }: EventCardProps) => {
   return (
     <div className="w-full md:w-1/2 p-4">
-      <div className="bg-white rounded-lg overflow-hidden shadow-lg">
+      <div className="overflow-hidden">
         {/* 圖片容器 */}
         <div className="relative aspect-[16/9]">
-          <img src={image} alt={title} className="w-full h-full object-cover" />
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover rounded-xl"
+          />
         </div>
 
         {/* 內容區 */}
-        <div className="p-4">
+        <div className="py-4">
           {/* 標題 */}
-          <h3 className="text-xl font-bold mb-2 line-clamp-2">{title}</h3>
+          <h3 className="text-3xl text-gray-800 font-extrabold mb-2 line-clamp-2">
+            {title}
+          </h3>
 
           {/* 日期 */}
-          <p className="text-red-600 text-sm mb-2">{date}</p>
+          <p className="text-red-600 font-extrabold text-sm mb-2">{date}</p>
 
           {/* 描述 */}
           <p className="text-gray-600 mb-4 line-clamp-2">{description}</p>
 
           {/* 詳細內容按鈕 */}
-          <div className="text-right">
+          <div className="flex items-center justify-center">
+            <hr className="w-full border border-t-gray-500 mx-4" />
             <Link
-              to={`/public${link}`}
-              className="inline-flex items-center bg-yellow-400 text-sm px-4 py-2 rounded-full hover:bg-yellow-500 transition-colors"
+              to={`/events/${id}`}
+              className="inline-flex items-center bg-yellow-400 text-gray-700 text-sm px-4 py-2 rounded-full hover:bg-gray-700 hover:text-yellow-400 transition-colors shrink-0 font-extrabold"
             >
-              詳細內容
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              詳細內容 →
             </Link>
           </div>
         </div>

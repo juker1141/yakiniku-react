@@ -15,7 +15,7 @@ export const eventList = [
   {
     id: 2,
     image: "/events/newShop.jpg",
-    title: "台中西屯家樂福自助吧新開幕｜揪團吃飯75折",
+    title: "台中西屯家樂｜揪團吃飯75折",
     date: "2024/12/23-2025/1/5",
     description: "歡慶台中西屯家樂福店 自助吧新開幕 揪團吃飯享75折",
     link: "2",

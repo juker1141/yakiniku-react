@@ -24,11 +24,11 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         <div id="logo" className="fixed top-8 left-8 z-[120]">
           <h1>
-            <Link to="/">
+            <Link to="/" onClick={() => setIsOpen(false)}>
               {" "}
               {/* 改用 Link */}
               <img
-                src="/logo-n.svg"
+                src="/logo.png"
                 alt="logo"
                 className={`w-24 md:w-48 xl:w-[320px] ${
                   isOpen || "drop-shadow-lg"
@@ -71,36 +71,40 @@ const Navbar = () => {
           <div className="flex justify-center w-full xl:space-x-8">
             <ul className="flex flex-col xl:flex-row justify-center items-center">
               <li>
-                <NavLink // 改用 NavLink
+                <NavLink
                   to="/events"
                   className="text-third hover:text-ry-orange font-semibold"
+                  onClick={() => setIsOpen(false)}
                 >
                   最新消息
                 </NavLink>
               </li>
               <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
-                <NavLink // 改用 NavLink
+                <NavLink
                   to="/about"
                   className="text-third hover:text-ry-orange font-semibold"
+                  onClick={() => setIsOpen(false)}
                 >
                   美味故事
                 </NavLink>
               </li>
               <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
-                <NavLink // 改用 NavLink
+                <NavLink
                   to="/menu"
                   className="text-third hover:text-ry-orange font-semibold"
+                  onClick={() => setIsOpen(false)}
                 >
                   美味菜單
                 </NavLink>
               </li>
               <li className="border-b xl:border-r border-white xl:border-ry-blue h-1 xl:h-5 my-8 xl:mx-8 w-[200%] xl:w-auto"></li>
               <li>
-                <NavLink // 改用 NavLink
+                <NavLink
                   to="/reservation"
                   className="text-third hover:text-ry-orange font-semibold"
+                  onClick={() => setIsOpen(false)}
                 >
                   線上訂位
                 </NavLink>

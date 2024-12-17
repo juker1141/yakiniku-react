@@ -1,6 +1,6 @@
 import Rope from "../components/Rope";
 import Card from "../components/Card";
-
+import { eventList } from "../utils/event";
 const Home = () => {
   return (
     <main className="mx-auto min-h-screen">
@@ -43,25 +43,25 @@ const Home = () => {
             <img className="hidden xl:block" src="/info/meat.webp" alt="meat" />
             <div className="bg-white w-full flex items-center justify-center rounded-[15px] xl:rounded-[30px] xl:p-8 p-4 mx-8 overflow-hidden relative">
               <div className="flex items-center animate-slide-right">
-                <div className="flex items-center w-[800px]">
+                <div className="flex items-center w-[900px]">
                   <img
                     className="h-2/3"
                     src="/info/dec-notice.webp"
                     alt="dec-notice"
                   />
                   <p className="text-xl font-semibold px-4">
-                    原燒｜500元商品卡，送禮自用兩相宜，單次訂購30張(含)以上享優惠
+                    炙燒大將｜500元商品卡，送禮自用兩相宜，單次訂購30張(含)以上享優惠
                     單張$475!
                   </p>
                 </div>
-                <div className="flex items-center w-[800px]">
+                <div className="flex items-center w-[900px]">
                   <img
                     className="h-2/3"
                     src="/info/dec-notice.webp"
                     alt="dec-notice"
                   />
                   <p className="text-xl font-semibold px-4">
-                    原燒｜500元商品卡，送禮自用兩相宜，單次訂購30張(含)以上享優惠
+                    炙燒大將｜500元商品卡，送禮自用兩相宜，單次訂購30張(含)以上享優惠
                     單張$475!
                   </p>
                 </div>
@@ -84,9 +84,11 @@ const Home = () => {
         <div className="absolute left-0 -top-12 bg-eventBanner bg-cover bg-center bg-no-repeat hidden xl:block w-[350px] h-[650px] z-20"></div>
         <div className="flex items-start justify-center z-10">
           <div className="flex justify-center gap-10">
-            <Card />
-            <Card />
-            <Card />
+            {eventList.map((event) => {
+              if (event.id <= 3) {
+                return <Card key={event.id} event={event} />;
+              }
+            })}
           </div>
         </div>
         <img

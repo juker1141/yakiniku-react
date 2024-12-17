@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 const Menu = () => {
   return (
     <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px]">
-      <h2 className="w-full text-center text-4xl mb-8 font-bold mb-20">
-        美味菜單
-      </h2>
+      <h2 className="w-full text-center text-4xl mb-8 font-bold">美味菜單</h2>
       <ul className="w-full flex flex-col xl:flex-row justify-start items-center gap-10">
         <li className="w-2/3 xl:w-1/4 relative">
           <Link to="/menu/inner" className="flex flex-col items-start">
