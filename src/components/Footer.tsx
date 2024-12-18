@@ -1,3 +1,5 @@
+import { getAssetPath } from "../utils/path";
+
 const Footer = () => {
   return (
     <div className="mt-48">
@@ -20,7 +22,7 @@ const Footer = () => {
           </li>
         </ul>
         <img
-          src="/footer/footer-slogan.webp"
+          src={getAssetPath("/footer/footer-slogan.webp")}
           alt="footer-slogan"
           className="w-[80%] xl:w-[40%] mt-10"
         />

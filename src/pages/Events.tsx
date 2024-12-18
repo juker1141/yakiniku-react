@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import { getAssetPath } from "../utils/path";
 import { eventList } from "../utils/event";
 
 // 在组件前添加接口定义
@@ -18,7 +18,7 @@ const EventCard = ({ id, image, title, date, description }: EventCardProps) => {
         {/* 圖片容器 */}
         <div className="relative aspect-[16/9]">
           <img
-            src={image}
+            src={getAssetPath(image)}
             alt={title}
             className="w-full h-full object-cover rounded-xl"
           />

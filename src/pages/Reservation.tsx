@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { getAssetPath } from "../utils/path";
 const Reservation = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +33,7 @@ const Reservation = () => {
         {/* 地圖區域 */}
         <div className="w-full md:w-1/2">
           <img
-            src="/public/reservation/location.png"
+            src={getAssetPath("/reservation/location.png")}
             alt="餐廳位置地圖"
             className="w-full h-[300px] xl:h-[600px] object-cover rounded-xl shadow-lg"
           />
