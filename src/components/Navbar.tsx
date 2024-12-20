@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom"; // 引入 React Router 組件
+import { getAssetPath } from "../utils/path";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navbar = () => {
               {" "}
               {/* 改用 Link */}
               <img
-                src="/logo.png"
+                src={getAssetPath("/logo.png")}
                 alt="logo"
                 className={`w-24 md:w-48 xl:w-[320px] ${
                   isOpen || "drop-shadow-lg"
@@ -45,7 +46,7 @@ const Navbar = () => {
           }`}
         >
           <img
-            src="/menu-btn-mobile.webp"
+            src={getAssetPath("/menu-btn-mobile.webp")}
             alt="menu"
             className="w-16 md:w-24 drop-shadow-lg"
           />

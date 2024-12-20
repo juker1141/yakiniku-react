@@ -1,3 +1,5 @@
+import { getAssetPath } from "../utils/path";
+
 interface Event {
   image: string;
   title: string;
@@ -14,7 +16,7 @@ const Card = ({ event }: CardProps) => {
     <div className="bg-white p-6 shadow-lg relative mt-2 w-[320px] xl:w-[400px] mx-4 xl:mx-0">
       <div className="before:content-[''] before:absolute before:-top-8 before:left-0 before:w-8 before:h-12 before:bg-white" />
       <img
-        src={event.image}
+        src={getAssetPath(event.image)}
         alt={event.title}
         className="w-full h-48 object-cover rounded-2xl mb-4"
       />

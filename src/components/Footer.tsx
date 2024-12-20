@@ -1,3 +1,5 @@
+import { getAssetPath } from "../utils/path";
+
 const Footer = () => {
   return (
     <div className="mt-48 flex flex-col">
@@ -28,12 +30,12 @@ const Footer = () => {
           </li>
         </ul>
         <img
-          src="/footer/footer-slogan.webp"
+          src={getAssetPath("/footer/footer-slogan.webp")}
           alt="footer-slogan"
           className="w-[80%] xl:w-[40%] mt-10"
         />
         <div className="text-black font-semibold text-sm mt-10">
-          正修數位媒體應用 - 練習作業
+          正修數位媒體應用 - 練習作業{" "}
           <br className="block xl:hidden" />
           Ryu © All right reserved.
         </div>

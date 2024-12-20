@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-
+import { getAssetPath } from "../utils/path";
 import { eventList } from "../utils/event";
 
 const EventDetail = () => {
@@ -29,7 +29,7 @@ const EventDetail = () => {
             </div>
             {event.image && (
               <img
-                src={event.image}
+                src={getAssetPath(event.image)}
                 alt={event.title}
                 className="mt-4 max-w-full h-auto rounded-lg mb-12"
               />

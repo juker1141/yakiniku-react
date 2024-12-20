@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { getAssetPath } from "../utils/path";
 
 const Menu = () => {
   return (
@@ -8,7 +9,7 @@ const Menu = () => {
         <li className="w-2/3 xl:w-1/4 relative">
           <Link to="/menu/inner" className="flex flex-col items-start">
             <img
-              src="/public/menu/inner/inner-menu.jpg"
+              src={getAssetPath("/menu/inner/inner-menu.jpg")}
               alt="innerMenu"
               width="100%"
               className="shadow-lg"
@@ -21,7 +22,7 @@ const Menu = () => {
         <li className="w-2/3 xl:w-1/4 relative">
           <Link to="/menu/outer" className="flex flex-col items-start">
             <img
-              src="/public/menu/outer/outer-menu.jpg"
+              src={getAssetPath("/menu/outer/outer-menu.jpg")}
               alt="outerMenu"
               width="100%"
               className="shadow-lg"

@@ -1,3 +1,5 @@
+import { getAssetPath } from "../../utils/path";
+
 const GotopBtn = () => {
   // 處理點擊事件
   const handleScrollToTop = () => {
@@ -12,7 +14,7 @@ const GotopBtn = () => {
       onClick={handleScrollToTop}
       className="fixed bottom-8 right-8 drop-shadow-lg z-[30]"
     >
-      <img src="/gototop.webp" alt="gotop" width={75} />
+      <img src={getAssetPath("/gototop.webp")} alt="gotop" width={75} />
     </button>
   );
 };

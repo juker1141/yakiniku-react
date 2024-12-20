@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { getAssetPath } from "../utils/path";
 const Reservation = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,7 +33,7 @@ const Reservation = () => {
         {/* 地圖區域 */}
         <div className="w-full md:w-1/2">
           <img
-            src="/public/reservation/location.png"
+            src={getAssetPath("/reservation/location.png")}
             alt="餐廳位置地圖"
             className="w-full h-[300px] xl:h-[600px] object-cover rounded-xl shadow-lg"
           />
@@ -138,12 +138,14 @@ const Reservation = () => {
               </div>
 
               {/* 提交按鈕 */}
-              <button
+              <div className="flex justify-center">
+                <button
                 type="submit"
-                className="w-full bg-ry-orange hover:backdrop-brightness-90 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out"
+                className="inline-flex items-center bg-yellow-400 text-gray-700 px-4 py-2 rounded-full hover:bg-gray-700 hover:text-yellow-400 transition-colors mb-4 font-extrabold"
               >
-                確認訂位
-              </button>
+                  確認訂位
+                </button>
+              </div>
             </form>
           </div>
         </div>
