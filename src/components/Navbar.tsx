@@ -22,7 +22,7 @@ const Navbar = () => {
     <nav className="fixed flex justify-end items-center xl:px-12 top-0 w-full z-50">
       {/* Logo */}
       <div className="flex justify-between items-center">
-        <div id="logo" className="fixed top-8 left-8 z-[120]">
+        <div id="logo" className="fixed top-8 left-4 xl:left-8 z-[120]">
           <h1>
             <Link to="/" onClick={() => setIsOpen(false)}>
               {" "}

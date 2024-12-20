@@ -1,6 +1,14 @@
 const Footer = () => {
   return (
-    <div className="mt-48">
+    <div className="mt-48 flex flex-col">
+      <div className="flex items-center justify-start mb-4 mx-4 xl:mx-0 xl:pl-[250px]">
+        <a href="#">
+          <img src="/footer/logo-food.webp" alt="logo-food" />
+        </a>
+        <a className="pl-4" href="#">
+          <img src="/footer/btn-facebook.svg" alt="btn-facebook" />
+        </a>
+      </div>
       <div className="flex justify-center flex-col items-start bg-primary rounded-tr-[100px] w-5/6 xl:w-4/5 p-5 py-10 xl:p-10 xl:pl-[250px]">
         <ul className="grid grid-cols-2 gap-4 xl:flex xl:flex-nowrap justify-center items-center text-xs xl:text-base text-third font-semibold">
           <li className="text-center">

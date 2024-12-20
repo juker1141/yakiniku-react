@@ -11,7 +11,7 @@ interface CardProps {
 
 const Card = ({ event }: CardProps) => {
   return (
-    <div className="bg-white p-6 shadow-lg relative mt-2 w-[400px]">
+    <div className="bg-white p-6 shadow-lg relative mt-2 w-[320px] xl:w-[400px] mx-4 xl:mx-0">
       <div className="before:content-[''] before:absolute before:-top-8 before:left-0 before:w-8 before:h-12 before:bg-white" />
       <img
         src={event.image}
