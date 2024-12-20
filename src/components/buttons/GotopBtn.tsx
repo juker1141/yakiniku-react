@@ -12,7 +12,7 @@ const GotopBtn = () => {
   return (
     <button
       onClick={handleScrollToTop}
-      className="fixed bottom-8 right-8 drop-shadow-lg z-[30]"
+      className="fixed bottom-8 right-4 xl:right-8 drop-shadow-lg z-[30]"
     >
       <img src={getAssetPath("/gototop.webp")} alt="gotop" width={75} />
     </button>
