@@ -3,7 +3,7 @@ import { getAssetPath } from "../utils/path";
 
 const Menu = () => {
   return (
-    <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px]">
+    <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px] z-10">
       <h2 className="w-full text-center text-4xl mb-8 font-bold">美味菜單</h2>
       <ul className="w-full flex flex-col xl:flex-row justify-start items-center gap-10">
         <li className="w-2/3 xl:w-1/4 relative">

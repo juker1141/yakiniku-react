@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { FeatureModal } from '../components/FeatureModal'
+import { useState } from "react";
+import { FeatureModal } from "../components/FeatureModal";
 
 const About = () => {
   const [selectedFeature, setSelectedFeature] = useState<number | null>(null);
@@ -9,30 +9,34 @@ const About = () => {
       id: 1,
       title: "嚴選極品肉質",
       bg: "bg-aboutQuality",
-      content: "我們嚴格把關每一片肉品的品質，從台灣本地優質黑毛和牛到日本A5和牛，堅持選用最頂級的食材。每週由專業採購團隊親自挑選，確保肉質的新鮮度、油花分布及口感，只為了讓顧客能享受到最極致的美味。"
+      content:
+        "我們嚴格把關每一片肉品的品質，從台灣本地優質黑毛和牛到日本A5和牛，堅持選用最頂級的食材。每週由專業採購團隊親自挑選，確保肉質的新鮮度、油花分布及口感，只為了讓顧客能享受到最極致的美味。",
     },
     {
       id: 2,
       title: "獨門醬料研發",
       bg: "bg-aboutSauce",
-      content: "融合台日兩地的烤肉文化，我們的主廚團隊耗時研發出獨特的醬料配方。從經典的蒜蓉醬到特製的秘傳醬汁，每一種醬料都經過反覆調整，完美襯托出各式肉品的原味，為饕客帶來層次豐富的味蕾享受。"
+      content:
+        "融合台日兩地的烤肉文化，我們的主廚團隊耗時研發出獨特的醬料配方。從經典的蒜蓉醬到特製的秘傳醬汁，每一種醬料都經過反覆調整，完美襯托出各式肉品的原味，為饕客帶來層次豐富的味蕾享受。",
     },
     {
       id: 3,
       title: "專業烤肉技藝",
       bg: "bg-aboutSkill",
-      content: "每位主廚都經過嚴格的專業訓練，精通不同肉品的最佳烤製手法。從火候的掌控、醃製的時間到切片的角度，都展現出專業的烤肉工藝。我們的烤肉技術不僅確保食材的完美熟度，更能突顯出每種肉品的獨特風味。"
+      content:
+        "每位主廚都經過嚴格的專業訓練，精通不同肉品的最佳烤製手法。從火候的掌控、醃製的時間到切片的角度，都展現出專業的烤肉工藝。我們的烤肉技術不僅確保食材的完美熟度，更能突顯出每種肉品的獨特風味。",
     },
     {
       id: 4,
       title: "細緻貼心服務",
       bg: "bg-aboutService",
-      content: "我們深信優質的用餐體驗不僅來自於美食，更來自於貼心的服務。從入座到用餐結束，我們的服務團隊都會細心關注每位顧客的需求，提供專業的烤肉建議與即時的服務，讓您能全心享受美食饗宴。"
-    }
+      content:
+        "我們深信優質的用餐體驗不僅來自於美食，更來自於貼心的服務。從入座到用餐結束，我們的服務團隊都會細心關注每位顧客的需求，提供專業的烤肉建議與即時的服務，讓您能全心享受美食饗宴。",
+    },
   ];
 
   return (
-    <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px]">
+    <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px] z-10">
       <h2 className="w-full text-center text-4xl mb-8 font-bold">美味故事</h2>
       <div className="max-w-3xl mx-auto space-y-6 px-4 xl:px-0">
         <p className="text-2xl font-bold">炙燒大將 傳承美味</p>
@@ -50,7 +54,7 @@ const About = () => {
           <p className="font-bold text-xl mb-4">我們的堅持：</p>
           <ul className="grid xl:grid-cols-2 gap-4">
             {features.map((feature) => (
-              <li 
+              <li
                 key={feature.id}
                 className={`${feature.bg} bg-center bg-cover bg-no-repeat rounded-lg font-bold text-center flex justify-center items-center shadow cursor-pointer overflow-hidden group`}
                 onClick={() => setSelectedFeature(feature.id)}
@@ -69,11 +73,11 @@ const About = () => {
         </p>
       </div>
 
-      <FeatureModal 
+      <FeatureModal
         isOpen={selectedFeature !== null}
         closeModal={() => setSelectedFeature(null)}
-        title={features.find(f => f.id === selectedFeature)?.title || ""}
-        content={features.find(f => f.id === selectedFeature)?.content || ""}
+        title={features.find((f) => f.id === selectedFeature)?.title || ""}
+        content={features.find((f) => f.id === selectedFeature)?.content || ""}
       />
     </main>
   );

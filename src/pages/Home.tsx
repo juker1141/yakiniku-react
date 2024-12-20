@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <main className="mx-auto min-h-screen">
       <div className="w-full h-screen xl:pl-52 xl:pb-12 mb-36 xl:mb-0">
-        <div className="relative w-full h-full">
+        <div className="relative w-full h-full z-10">
           <div className="bg-center bg-cover bg-no-repeat bg-banner w-full h-full rounded-bl-[180px]"></div>
           <img
             src={getAssetPath("/banner/more-meat.webp")}

@@ -55,7 +55,7 @@ const EventCard = ({ id, image, title, date, description }: EventCardProps) => {
 
 const Events = () => {
   return (
-    <div className="container mx-auto min-h-screen mt-48 xl:mt-[300px] p-4 xl:px-0">
+    <div className="container mx-auto min-h-screen mt-48 xl:mt-[300px] p-4 xl:px-0 z-10">
       <div className="flex items-center mb-8">
         <h2 className="w-full text-4xl text-center font-bold text-gray-700">
           最新消息

@@ -18,10 +18,8 @@ const MenuContent = () => {
   const images = isInnerMenu ? innerMenu : outerMenu;
 
   return (
-    <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px]">
-      <h3 className="w-full text-center text-4xl mb-8 font-bold mb-20">
-        {title}
-      </h3>
+    <main className="mx-auto container min-h-screen mt-48 xl:mt-[300px] z-10">
+      <h3 className="w-full text-center text-4xl mb-8 font-bold">{title}</h3>
 
       {/* 圖片列表 */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-4">

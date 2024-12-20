@@ -5,10 +5,13 @@ const Footer = () => {
     <div className="mt-48 flex flex-col">
       <div className="flex items-center justify-start mb-4 mx-4 xl:mx-0 xl:pl-[250px]">
         <a href="#">
-          <img src="/footer/logo-food.webp" alt="logo-food" />
+          <img src={getAssetPath("/footer/logo-food.webp")} alt="logo-food" />
         </a>
         <a className="pl-4" href="#">
-          <img src="/footer/btn-facebook.svg" alt="btn-facebook" />
+          <img
+            src={getAssetPath("/footer/btn-facebook.svg")}
+            alt="btn-facebook"
+          />
         </a>
       </div>
       <div className="flex justify-center flex-col items-start bg-primary rounded-tr-[100px] w-5/6 xl:w-4/5 p-5 py-10 xl:p-10 xl:pl-[250px]">
@@ -35,8 +38,7 @@ const Footer = () => {
           className="w-[80%] xl:w-[40%] mt-10"
         />
         <div className="text-black font-semibold text-sm mt-10">
-          正修數位媒體應用 - 練習作業{" "}
-          <br className="block xl:hidden" />
+          正修數位媒體應用 - 練習作業 <br className="block xl:hidden" />
           Ryu © All right reserved.
         </div>
       </div>
