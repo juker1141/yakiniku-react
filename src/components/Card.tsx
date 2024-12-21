@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { getAssetPath } from "../utils/path";
 
 interface Event {
+  id: number;
   image: string;
   title: string;
   date: string;
@@ -18,14 +20,17 @@ const Card = ({ event }: CardProps) => {
       <img
         src={getAssetPath(event.image)}
         alt={event.title}
-        className="w-full h-48 object-cover rounded-2xl mb-4"
+        className="w-full max-h-48 object-contain xl:object-cover rounded-2xl mb-4"
       />
       <h4 className="text-xl font-bold mb-2">{event.title}</h4>
       <p className="text-red-600 mb-2">{event.date}</p>
       <p className="text-gray-600 mb-4">{event.description}</p>
-      <button className="bg-yellow-400 text-sm px-4 py-2 rounded-full">
+      <Link
+        to={`/events/${event.id}`}
+        className="bg-yellow-400 text-sm px-4 py-2 rounded-full"
+      >
         詳細內容 →
-      </button>
+      </Link>
       <div className="after:content-[''] after:absolute after:-top-8 after:right-0 after:w-8 after:h-12 after:bg-white" />
     </div>
   );
